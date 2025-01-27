@@ -34,11 +34,17 @@ dependencies {
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 }
 
+def fmjVariables = [
+        version: project.version,
+		mc_version: project.minecraft_version,
+		loader_version: project.loader_version
+]
+
 processResources {
-	inputs.property "version", project.version
+	inputs.properties fmjVariables
 
 	filesMatching("fabric.mod.json") {
-		expand "version": project.version
+		expand fmjVariables
 	}
 }
 
