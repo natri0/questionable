@@ -33,9 +33,7 @@
 
   "custom": {
     "loom:injected_interfaces": {
-      "net/minecraft/entity/player/PlayerEntity": ["me/nullium21/questionable/PlayerEntityCustom", "net/minecraft/entity/Saddleable"]
+      "net/minecraft/entity/player/PlayerEntity": ["net/minecraft/entity/Leashable", "net/minecraft/entity/Saddleable"]
     }
-  },
-
-  "accessWidener": "questionable.accesswidener"
+  }
 }

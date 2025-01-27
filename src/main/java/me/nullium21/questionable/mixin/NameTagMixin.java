@@ -1,25 +1,18 @@
 package me.nullium21.questionable.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.NameTagItem;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(NameTagItem.class)
 public class NameTagMixin {
 
-    @Inject(method = "useOnEntity", at = @At("HEAD"), cancellable = true)
-    public void useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        if (!user.world.isClient && stack.hasCustomName() && entity instanceof PlayerEntity && entity.isAlive()) {
-            entity.setCustomName(stack.getName());
-
-            cir.setReturnValue(ActionResult.success(user.world.isClient));
-        }
+    @ModifyExpressionValue(method = "useOnEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/EntityType;isSaveable()Z"))
+    public boolean makePlayersNameable(boolean original, @Local(argsOnly = true) LivingEntity entity) {
+        return original || entity instanceof PlayerEntity; // :p
     }
 }
