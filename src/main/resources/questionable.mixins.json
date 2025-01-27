@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "NameTagMixin",
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "EntityMixin",
+    "SaddleItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1
