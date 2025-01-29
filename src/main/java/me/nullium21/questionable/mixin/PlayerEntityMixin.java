@@ -62,7 +62,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements Leashabl
 
     @Override
     public boolean canBeSaddled() {
-        return !isSaddled;
+        return true;
     }
 
     @Override
