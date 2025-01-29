@@ -8,8 +8,6 @@ This is a **server-side, optionally client-side** Fabric mod to make players a l
 - Nametagging players: give someone a prefix to show off their role in the community!
 - Leashing players: someone is misbehaving? make them unable to get away!
 
-**Warning:** currently, if someone's sitting on you, you won't see it :c this is work-in-progress!
-
 ## Server vs. Client
 
 | Feature  | Required on client | Required on server |
