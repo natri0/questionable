@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "me.nullium21.questionable.mixin",
+  "package": "fyi.natri.questionable.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "EntityMixin",

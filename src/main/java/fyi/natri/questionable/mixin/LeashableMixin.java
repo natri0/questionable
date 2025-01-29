@@ -1,4 +1,4 @@
-package me.nullium21.questionable.mixin;
+package fyi.natri.questionable.mixin;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Leashable;

@@ -1,4 +1,4 @@
-package me.nullium21.questionable;
+package fyi.natri.questionable;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.entity.mob.MobEntity;
